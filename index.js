@@ -17,37 +17,33 @@ searchInput.addEventListener('click', () => {
   });
 })
 
-function filter(event){
-  const selected = event.target.value;
-  
-  const movieContainer = document.querySelector(' .movies__lists--container');
-  let moviecard = Array.from(document.querySelectorAll('h4.movie__type'));
-  
-  const sortedMovies = moviecard.sort((a, b) => {
-    const YearA = parseInt(a.getAttribute('data-year'));
-    const YearB = parseInt(b.getAttribute('data-year'));
 
-    if (selected ==='NEW_TO_OLD'){
-      return YearB - YearA;
-    } else if  (selected ==='OLD_TO_NEW'){
-      return YearA - YearB;
-    } else {
-      return "";
-    }
-  });
-  
-
-
-sortedMovies.forEach(movie => {
- movieContainer.appendChild(movie.closest('.movies__lists--container'))
-})
-}
 async function moviesmain() {
   const movies = await fetch("https://omdbapi.com/?s=fast&apikey=1a73e81b")
   const moviesData = await movies.json();
-  
-  moviesListsEL.innerHTML = moviesData.Search
-  .map(
+  const sortOptions = document.querySelector(' .sort');
+  moviesListsEL.innerHTML = moviesData.Search.sort((a, b) => {
+    function filter(event) {
+      const selected = event.target.value;
+    
+      const movieContainer = document.querySelector(' .movies__lists--container');
+      let moviecard = Array.from(document.querySelectorAll('h4.movie__type'));
+      
+      const sortedMovies = moviecard.sort((a, b) => {
+        const YearA = parseInt(a.getAttribute('data-year'));
+        const YearB = parseInt(b.getAttribute('data-year'));
+    
+        if (selected ==='NEW_TO_OLD'){
+          return YearB - YearA;
+        } else if  (selected ==='OLD_TO_NEW'){
+          return YearA - YearB;
+        } else {
+          return "";
+        }
+      });
+    };  
+  })
+   .map(
     (movie) => 
       `<div class="movies__list">
           <div class="movies__lists--container">
