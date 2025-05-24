@@ -200,6 +200,23 @@ input {
     font-weight: 600;
 }
 
+.sort{
+    padding: 0 20px;
+    margin-top: 30px;
+}
+
+.justify-betwen{
+    justify-content: space-between !important;
+}
+
+.filter{
+    margin:0 auto;
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
 .svg-inline--fa{
     width: 1em;
     height: 1em;

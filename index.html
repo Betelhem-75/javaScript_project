@@ -15,7 +15,7 @@
                         <img src="./assets/whitelogo.39850b27.png" class="logo" alt="">
                     </div>
                     <div class="links">
-                        <a href="#" class="link"> Home</a>
+                        <a href="/" class="link"> Home</a>
                         <a href="#" class="link">Find your move</a>
                         <a href="#" class="btn__contact">CONTACT</a>
                     </div>
@@ -24,8 +24,8 @@
                 <div class="content__wrapp">
                     <h1>Browse our movise</h1>
                     <div class="input__wrap">
-                        <input type="search" id="search" placeholder="Search by Name" movie-search">
-                        <div class="search__wrapper">
+                        <input type="text" id="search" placeholder="Search by Name">
+                        <div class="search__wrapper" >
                             <svg data-v-390ceb07="" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="svg-inline--fa fa-search fa-w-16"><path data-v-390ceb07="" fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z" class=""></path></svg>
                         </div>
                     </div>
@@ -38,8 +38,15 @@
                     <div class="md__progress--bar_fill"></div>
                     <div class="md__progress--bar_buffer"></div>
                 </div>
-                <div class="filter">
+                <div class="filter justify-betwen">
                     <h1 class="search__info"><span class="black__text"> Search results:</span></h1>
+                    <select class="sort" defaultValue="DEFAULT" onchange="filter(event)">
+                        <option value="">
+                            Sort Movies by year
+                         </option>
+                         <option value="NEW_TO_OLD">Movie NEW TO OLD</option>
+                         <option value="OLD_TO_NEW">Movie OLD TO NEW</option>
+                    </select>
                 </div>
                 <div class="movis">
                     <div class="content__wrapper"></div>
@@ -53,7 +60,7 @@
                         <img src="
                         "https://m.media-amazon.com/images/M/MV5BZGRiMDE1NTMtMThmZS00YjE4LWI1ODQtNjRkZGZlOTg2" class="poster" alt="" />
                          <h2 class="movie__title">Title </h2>
-                         <p class="movie__type"><b>Year:</b> 2001</p>
+                         <h4 class="movie__type"><b>Year:</b> 2001<h4>
                          <p class="movie__type"><b>imdbID:</b> tt0232500</p>
                          <p class="movie__type"><b>Type:</b> move</p>
                          
